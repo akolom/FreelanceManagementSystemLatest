@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:remove="all">Email for an Interview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<div style="font-size: 20px">
+		<em>You are requested to attain an interview.</em>
+		<div style="text-indent: 8em;">
+			<img src="cid:imtheguy" height="80" width="80" /><em> .com</em>
+		</div>
+	</div>
+	<h3>Greetings</h3>
+	<p th:text="${name}" />
+
+	<H4>We have received your application for the project !</H4>
+
+	<p>Here are the Project details:</p>
+	<b>Project Name : </b>
+	<span th:text="${project.name}"></span>
+	<br>
+	<b>Project Description : </b>
+	<span th:text="${project.description}"></span>
+	<br>
+	<b>Project Category : </b>
+	<span th:text="${project.category.categoryTitle}"></span>
+	<br>
+	<b>Project Skills : </b>
+	<span th:each="skill : ${project.skills}"> <span
+		th:text="${skill.skillTitle}"></span>
+	</span>
+	<br>
+	<b>Project Budget : </b>
+	<span th:text="${project.budget}"></span>
+	<br>
+	<div style="text-indent: 3em">
+		<p>Here is the Employer's Details!</p>
+		<b>Employer Name : </b> <span th:text="${employer.firstName}"></span>
+		<span th:text="${employer.lastName}"></span> <br> <b>Employer
+			Profile : </b> <span th:text="${profileLink}"></span>
+	</div>
+	<br>
+	<br />
+	<p>Please do not reply to this email.</p>
+
+	<p>
+		<br /> Thanks for your application, <br /> &emsp; <em><b>Neon
+				Freelancer Group!</b></em>
+	</p>
+</body>
+</html>
